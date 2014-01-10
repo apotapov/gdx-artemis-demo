@@ -1,5 +1,7 @@
 This is a demo environment for the [gdx-artemis](https://github.com/apotapov/gdx-artemis) project.
 
+For the explanation of the demo see [gdx-artemis Wiki](https://github.com/apotapov/gdx-artemis/wiki/Quick-tutorial).
+
 This project contains appropriate Eclipse project files and launch configuration. Both
 can be imported into Eclipse to run and debug the demo.
 
