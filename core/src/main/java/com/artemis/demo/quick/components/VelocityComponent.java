@@ -15,13 +15,8 @@ public class VelocityComponent implements Component {
         velocity = new Vector2(x, y);
     }
 
-    public void add(float x, float y) {
-        velocity.add(x, y);
-    }
-
     @Override
     public void reset() {
         velocity.set(0, 0);
     }
-
 }

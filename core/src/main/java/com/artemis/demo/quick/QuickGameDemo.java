@@ -53,8 +53,15 @@ public class QuickGameDemo extends Game {
      */
     protected void createEntity(float x, float y, float vx, float vy) {
         Entity e = world.createEntity();
-        e.addComponent(new PositionComponent(x, y));
-        e.addComponent(new VelocityComponent(vx, vy));
+
+        PositionComponent pc = world.createComponent(PositionComponent.class);
+        pc.position.set(x, y);
+        e.addComponent(pc);
+
+        VelocityComponent vc = world.createComponent(VelocityComponent.class);
+        vc.velocity.set(vx, vy);
+        e.addComponent(vc);
+
         e.addToWorld();
     }
 

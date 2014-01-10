@@ -15,13 +15,8 @@ public class PositionComponent implements Component {
         position = new Vector2(x, y);
     }
 
-    public void add(float x, float y) {
-        position.add(x, y);
-    }
-
     @Override
     public void reset() {
         position.set(0, 0);
     }
-
 }

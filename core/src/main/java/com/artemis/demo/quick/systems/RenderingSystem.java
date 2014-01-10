@@ -7,7 +7,7 @@ import com.artemis.demo.quick.components.PositionComponent;
 import com.artemis.demo.quick.components.VelocityComponent;
 import com.artemis.systems.EntitySystem;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
@@ -38,13 +38,17 @@ public class RenderingSystem extends EntitySystem {
 
     @Override
     protected void processEntities(Array<Entity> entities) {
-        Gdx.gl.glClearColor(0, 0, 0, 0);
-        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
+        // clear screen
+        Gdx.gl.glClearColor(0, 0, 0, 0);
+        Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
+
+        // update camera and shape renderer
         camera.update();
         shapeRenderer.setProjectionMatrix(camera.combined);
         shapeRenderer.identity();
 
+        // render each entity
         for (Entity entity : entities) {
             PositionComponent positionComponent = pm.get(entity);
             shapeRenderer.circle(positionComponent.position.x, positionComponent.position.y, 10);
