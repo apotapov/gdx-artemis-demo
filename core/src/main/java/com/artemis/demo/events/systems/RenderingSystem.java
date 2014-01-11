@@ -1,9 +1,9 @@
-package com.artemis.demo.quick.systems;
+package com.artemis.demo.events.systems;
 
 import com.artemis.Aspect;
 import com.artemis.ComponentMapper;
 import com.artemis.Entity;
-import com.artemis.demo.quick.components.PositionComponent;
+import com.artemis.demo.events.components.PositionComponent;
 import com.artemis.systems.EntitySystem;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL10;
@@ -21,7 +21,8 @@ public class RenderingSystem extends EntitySystem {
 
     @SuppressWarnings("unchecked")
     public RenderingSystem(OrthographicCamera camera) {
-        super(Aspect.getAspectForAll(PositionComponent.class));
+        super(Aspect.getAspectForAll(
+                PositionComponent.class));
 
         this.camera = camera;
         this.shapeRenderer = new ShapeRenderer();
