@@ -4,10 +4,10 @@ import com.artemis.Entity;
 import com.artemis.World;
 import com.artemis.demo.events.components.PositionComponent;
 import com.artemis.demo.events.components.VelocityComponent;
-import com.artemis.demo.events.systems.ResetPositionSystem;
 import com.artemis.demo.events.systems.MovementSystem;
 import com.artemis.demo.events.systems.RenderingSystem;
-import com.artemis.systems.event.BasicEventSystem;
+import com.artemis.demo.events.systems.ResetPositionSystem;
+import com.artemis.systems.event.BasicEventDeliverySystem;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -44,7 +44,7 @@ public class EventGameDemo extends Game {
     protected void createWorld() {
         world = new World();
 
-        world.setSystem(new BasicEventSystem());
+        world.setSystem(new BasicEventDeliverySystem());
         world.setSystem(new MovementSystem());
         world.setSystem(new ResetPositionSystem());
         world.setSystem(new RenderingSystem(camera));
