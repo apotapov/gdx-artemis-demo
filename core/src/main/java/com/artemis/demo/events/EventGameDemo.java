@@ -44,7 +44,7 @@ public class EventGameDemo extends Game {
     protected void createWorld() {
         world = new World();
 
-        world.setSystem(new BasicEventDeliverySystem());
+        world.setEventDeliverySystem(new BasicEventDeliverySystem());
         world.setSystem(new MovementSystem());
         world.setSystem(new ResetPositionSystem());
         world.setSystem(new RenderingSystem(camera));
