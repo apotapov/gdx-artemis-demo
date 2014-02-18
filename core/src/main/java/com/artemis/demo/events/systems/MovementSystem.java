@@ -1,7 +1,7 @@
 package com.artemis.demo.events.systems;
 
 
-import com.artemis.Aspect;
+import com.artemis.Filter;
 import com.artemis.ComponentMapper;
 import com.artemis.Entity;
 import com.artemis.demo.events.ResetPositionEvent;
@@ -18,7 +18,7 @@ public class MovementSystem extends EntityProcessingSystem {
 
     @SuppressWarnings("unchecked")
     public MovementSystem() {
-        super(Aspect.getAspectForAll(
+        super(Filter.allComponents(
                 PositionComponent.class, VelocityComponent.class));
     }
 

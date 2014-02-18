@@ -1,6 +1,6 @@
 package com.artemis.demo.quick.systems;
 
-import com.artemis.Aspect;
+import com.artemis.Filter;
 import com.artemis.ComponentMapper;
 import com.artemis.Entity;
 import com.artemis.demo.quick.components.PositionComponent;
@@ -21,7 +21,7 @@ public class RenderingSystem extends EntitySystem {
 
     @SuppressWarnings("unchecked")
     public RenderingSystem(OrthographicCamera camera) {
-        super(Aspect.getAspectForAll(PositionComponent.class));
+        super(Filter.allComponents(PositionComponent.class));
 
         this.camera = camera;
         this.shapeRenderer = new ShapeRenderer();
